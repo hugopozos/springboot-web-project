@@ -1,2 +1,2 @@
 # Satoyama
-Nuestra plataforma busca llevar la cultura del satoyama a todo el mundo, fomentando la sostenibilidad y la conexión con la naturaleza a través del cultivo de huertos urbanos alentando a las personas a cultivar sus propios huertos en espacios reducidos y urbanos.
+Nuestra plataforma web busca llevar la cultura del satoyama a todo el mundo, fomentando la sostenibilidad y la conexión con la naturaleza a través del cultivo de huertos urbanos, alentando a las personas a cultivar sus propios huertos en espacios reducidos y urbanos. Con esta plataforma, queremos crear una comunidad virtual que proporcione información útil sobre el cultivo de huertos urbanos y promueva prácticas sostenibles.
