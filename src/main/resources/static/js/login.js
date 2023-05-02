@@ -27,7 +27,7 @@ async function iniciarSesion(){
         // Guardar la respuesta del lado del browser
         localStorage.token = respuesta;
         localStorage.email = datos.email;
-        window.location.href = 'usuarios.html'
+        window.location.href = 'huertos.html'
     }else{
         alert("Las credenciales son incorrectas");
     }

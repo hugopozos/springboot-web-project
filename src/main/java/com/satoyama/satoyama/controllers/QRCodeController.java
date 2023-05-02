@@ -15,6 +15,14 @@ public class QRCodeController {
     @Autowired
     private QRCodeService qrCodeService;
 
+
+    // QrCodeDto
+    // QrCodeServiceInterface // es una interfaz que va a tener los metodos: regresarQRparaFront generate(String email)
+    // QrCodeServiceImplements // Aqui si va el codigo
+
+    // Select user where MD5(email) = encryptedEmail;
+    // Leer el QR generado
+
     @PostMapping("/v1/qrcode")
     public void generateQRCode(HttpServletResponse response,
                                @RequestBody String text,

@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 public class AuthController {
 
@@ -21,9 +24,12 @@ public class AuthController {
     @RequestMapping(value = "api/login", method = RequestMethod.POST)
     public String login(@RequestBody Usuario usuario) {
 
+        Map<String, Object> respuesta = new HashMap<>();
         Usuario usuarioLogueado = usuarioDao.obtenerUsuarioPorCredenciales(usuario);
         if (usuarioLogueado != null) {
             String tokenJWT = jwtUtill.create(String.valueOf(usuarioLogueado.getId()), usuarioLogueado.getEmail());
+            respuesta.put("id_usuario", usuarioLogueado.getId());
+            respuesta.put("tokenJWT", tokenJWT);
             return tokenJWT;
         }
         return "FAIL";
