@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78754b41-aadf-4726-a7be-3d16568d2d72" name="Changes" comment="Avance">
-      <change afterPath="$PROJECT_DIR$/CultivoAguacate.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aguacate.html" beforeDir="false" afterPath="$PROJECT_DIR$/Aguacate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CultivoLimon.html" beforeDir="false" afterPath="$PROJECT_DIR$/CultivoLimon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Limon.html" beforeDir="false" afterPath="$PROJECT_DIR$/Limon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CultivoAguacate.html" beforeDir="false" afterPath="$PROJECT_DIR$/CultivoAguacate.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683340223812</updated>
       <workItem from="1683340224866" duration="218000" />
-      <workItem from="1683346868058" duration="5802000" />
+      <workItem from="1683346868058" duration="7237000" />
     </task>
     <task id="LOCAL-00001" summary="Avance">
       <created>1683340290084</created>
