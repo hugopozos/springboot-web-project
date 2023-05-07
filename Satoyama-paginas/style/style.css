@@ -1,0 +1,151 @@
+/* Estilos generales*/
+:root{
+    --color-primario:#508484; 
+    --color-secundario:#B6D03B; 
+    --color-terciario:#00A7E1; 
+    --blanco:#F4F4F9; 
+    --negro:#000; 
+    --separacion:5.25rem;
+    --fuente:'Assistant', sans-serif;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fuente);
+    background-color: var(--blanco);
+    margin: 0;
+
+    font-size: 1.1rem;
+}
+h2{
+    font-size: 2.2rem;
+    color: var(--color-primario);
+    font-weight: 400;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+/* Utilidades */
+.texto-verde{
+    color: var(--color-secundario);
+}
+.texto-centrado{
+    text-align: center;
+}
+.boton{
+    color: var(--blanco);
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    box-shadow: 3px 3px  rgba(193, 193, 193, 0.345);
+}
+.boton:hover{
+    background-color: hsla(70, 61%, 52%, 0.752);
+}
+.boton-secundario{
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+}
+/*=== HEADER ===*/
+header{
+    color: var(--color-primario);
+}
+.contenedor-header{
+    padding: 0.3rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-contenedor{
+    display: flex;
+    gap: 0.5rem;
+}
+.logo-contenedor img{
+    width: 50px;
+    object-fit: contain;
+}
+.barra-navegacion{
+    display: flex;
+    gap: 1.5rem;
+}
+.menu-item a{
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+.menu-item a:hover{
+    color: #000;
+}
+.contenedor-botones{
+    display: flex;
+    gap: 2rem;
+}
+/* === HERO ===*/
+.hero{
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url('/Satoyama-paginas/assets/img/hero-imagen-santoyama.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 350px;
+
+    padding: 2rem 0;
+}
+.hero p{
+    color: var(--blanco);
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+
+}
+.texto-comillas{
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 900;
+    font-size: 3.0rem;
+    line-height: 1.3;
+    width: 40%;
+}
+.hero .contenedor-botones{
+    justify-content: center;
+}
+.contenedor-botones p{
+    font-size: 2.0rem;
+    font-weight: 300;
+    margin: 0;
+}
+.btn-transparente{
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    font-weight: 400;
+}
+/* === NOSOTROS === */
+.nosotros-contenedor{
+    display: grid;
+    grid-template-columns: 30% 20rem;
+    gap: var(--separacion);
+    place-content: center;
+    padding: 2rem 1rem;
+    max-width: 75rem;
+}
+.imagen-contenedor{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 3px rgb(0,0,0,0.2);
+    order: 1;
+    justify-self: right;
+    height: 350px;
+}
+.imagen-contenedor img{
+    height: 100%;
+}
+.nosotros-texto{
+    line-height: 1.5;
+    align-self: flex-start;
+}
