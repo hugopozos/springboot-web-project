@@ -1,0 +1,9 @@
+USE Satoyama_DB;
+
+CREATE TABLE IF NOT EXISTS TB_Area(
+	CodigoArea INT NOT NULL AUTO_INCREMENT,
+    NombreArea VARCHAR (20) NOT NULL,
+    CodigoHuerto INT NOT NULL,
+    PRIMARY KEY (CodigoArea),
+    FOREIGN KEY (CodigoHuerto) REFERENCES TB_Huerto(CodigoHuerto) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
