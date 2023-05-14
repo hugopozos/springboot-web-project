@@ -1515,6 +1515,7 @@
     text-align: center;
     padding: 1rem;
     font-size: 0.85em;
+    color: #fff;
   }
   
   .email-bold{
@@ -11322,4 +11323,3 @@
   body.sidebar-toggled footer.sticky-footer {
     width: 100%;
   }
-  
