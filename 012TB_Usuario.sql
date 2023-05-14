@@ -1,4 +1,4 @@
-Use Satoyama_DB;
+USE Satoyama_DB;
 
 CREATE TABLE IF NOT EXISTS TB_Usuario(
 	NumeroUsuario INT NOT NULL AUTO_INCREMENT,

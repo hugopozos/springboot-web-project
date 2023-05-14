@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS TB_Usuario(
 CREATE TABLE IF NOT EXISTS TB_Guia(
 	CodigoGuia INT NOT NULL AUTO_INCREMENT,
     TituloGuia VARCHAR (30) NOT NULL,
-    ContenidoGuia VARCHAR (500) NOT NULL,
+    ContenidoGuia VARCHAR (500),
     FechaGuia DATE NOT NULL,
     IdTrabajador INT NOT NULL,
     PRIMARY KEY (CodigoGuia),
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS TB_Guia(
 CREATE TABLE IF NOT EXISTS TB_Planta(
 	CodigoPlanta INT NOT NULL AUTO_INCREMENT,
     NombrePlanta VARCHAR (20) NOT NULL,
-    DescripcionPlanta VARCHAR (200) NOT NULL,
+    DescripcionPlanta VARCHAR (500),
     IdTrabajador INT NOT NULL,
     PRIMARY KEY (CodigoPlanta), 
     FOREIGN KEY (IdTrabajador) REFERENCES TB_Trabajador(IdTrabajador)
@@ -57,10 +57,20 @@ CREATE TABLE IF NOT EXISTS TB_Area(
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS TB_Area_Planta(
+	CodigoAreaPlanta INT NOT NULL AUTO_INCREMENT,
 	CodigoArea INT NOT NULL,
     CodigoPlanta INT NOT NULL,
-    Cantidad INT NOT NULL,
-    PRIMARY KEY (CodigoArea, CodigoPlanta),
+    PRIMARY KEY (CodigoAreaPlanta),
     FOREIGN KEY (CodigoArea) REFERENCES TB_Area(CodigoArea) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY (CodigoPlanta) REFERENCES TB_Planta(CodigoPlanta) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS TB_Reporte(
+	CodigoReporte INT NOT NULL AUTO_INCREMENT,
+    FechaReporte DATE NOT NULL,
+    ObservacionesReporte VARCHAR(300),
+    AguaUsadaReporte INT,
+    CodigoAreaPlanta INT NOT NULL,
+    PRIMARY KEY (CodigoReporte),
+    FOREIGN KEY (CodigoAreaPlanta) REFERENCES TB_Area_Planta(CodigoAreaPlanta) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE = InnoDB;
