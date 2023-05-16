@@ -28,6 +28,9 @@
     --font-family-sans-serif: 'Assistant', sans-serif;
     --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.bold{
+    font-weight: 600;
+}
 
   *,
   *::before,
@@ -59,6 +62,7 @@ html {
 }
 .catalogo-wrapper{
     padding: 1.5rem !important;
+    padding-bottom: 0 !important;
 }
 .catalogo-wrapper .flex-wrapper{
     display: flex;
@@ -111,12 +115,11 @@ html {
 .grid-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: (4,1fr);
+    grid-template-rows: repeat(3,1fr);
     grid-template-areas: 'card-primero card-primero'
-                            'propagacion consecuencias'
-                            'reproduccion consecuencias'
-                            'vida consecuencias';
-    gap: 1rem;
+                            'permite beneificios'
+                            'funciona funciona';
+    gap: 2rem;
     margin-bottom: 1.25rem;
 }
 .detalles-card{
@@ -127,33 +130,40 @@ html {
     text-align: center;
 }
 .detalles-card h2{
-    margin-bottom: 0.85rem;
+    margin-bottom: 1rem;
 }
 .detalles-card:first-child{
     display: flex;
     grid-area: card-primero;
 }
 .detalles-card:first-child .texto-chico{
-    flex-basis: 80%;
+    flex: 1 2 300px;
+    align-self: center;
 }
-.detalles-card:first-child img{
+.detalles-card:first-child .imagen-contenedor{
     flex: 1;
-    height: 100%;
+    border-radius: 77px;
+    overflow: hidden;
 }
-.propagacion{
-    grid-area: propagacion;
+.detalles-card .imagen-contenedor img{
+    object-fit: cover;
+    height:100%;
 }
-.vida{
-    grid-area: vida;
+.permite{
+    grid-area: permite;
 }
-.reproduccion{
-    grid-area: reproduccion;
+.beneficios{
+    grid-area: beneificios;
 }
-.consecuencias{
-    grid-row: 2/5;
+.beneficios .lista-beneficios li{
+    text-align: left;
 }
+.funciona{
+    grid-area: funciona;
+}
+
 .plantas-atacan{
-    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)) ,url("../assets/img/planta-fondo.png");
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)) ,url("../assets/img/background-tecnica-riego.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -161,7 +171,6 @@ html {
     text-align: center;
     padding: 1rem 2.5rem;
     font-weight: 400;
-    margin-bottom: 1.25rem;
     min-height: 300px;
     display: grid;
 }
@@ -173,6 +182,7 @@ html {
 }
 .plantas-atacan .flex-container p{
     font-size: 1.3rem;
+    font-weight: 600;
 }
 .tecnicas-goteo{
     background:url('../assets/img/planta-footer.png');
