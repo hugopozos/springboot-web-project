@@ -1,0 +1,10 @@
+com\satoyama\satoyama\utils\QRCodeService.class
+com\satoyama\satoyama\dao\UsuarioDaoImp.class
+com\satoyama\satoyama\controllers\QRCodeController.class
+com\satoyama\satoyama\controllers\UsuarioController.class
+com\satoyama\satoyama\utils\JWTUtil.class
+com\satoyama\satoyama\SatoyamaApplication.class
+com\satoyama\satoyama\dao\UsuarioDao.class
+com\satoyama\satoyama\models\Usuario.class
+com\satoyama\satoyama\ServletInitializer.class
+com\satoyama\satoyama\controllers\AuthController.class
