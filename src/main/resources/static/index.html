@@ -1,10 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Hola</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satoyama</title>
+    <!-- Debes de colocar el la imagen logo en la misma ubicacion que este archivo -->
+    <link rel="icon" href="/Satoyama-paginas/assets/img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/landing.css">
 </head>
+
 <body>
-    <p>hola como estas</p>
+    <div class="contenedor-padre">
+        <header>
+            <div class="contenedor-header">
+                <div class="logo-contenedor">
+                    <img src="./assets/img/logo.png" alt="logo de satoyama">
+                    <p>Satoyama</p>
+                </div>
+                <nav >
+                    <ul class="barra-navegacion">
+                        <li class="menu-item"><a href="#nosotros">Nosotros</a></li>
+                        <li class="menu-item"><a href="#funcionalidad">Funcionalidades</a></li>
+                        <li class="menu-item"><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="contenedor-botones">
+                    <a href="#" class="boton">Registrarse</a>
+                    <a href="#" class="boton boton-secundario">iniciar sesión</a>
+                </div>
+            </div>
+        </header>
+        <div class="hero texto-centrado">
+            <p class="texto-comillas">"Tener un huerto nunca ha sido tan facil."</p>
+            <div class="contenedor-botones">
+                <p>Empezar:</p>
+                <a class="btn-transparente" href="#">Ahora</a>
+            </div>
+        </div>
+        <main>
+            <section class="nosotros-seccion">
+                <div class="nosotros-contenedor">
+                    <div class="imagen-contenedor">
+                        <img src="assets/img/imagen-nosotros.jpg" alt="imagen de un jardin con macetas" width="402" height="400">
+                    </div>
+                    <div class="nosotros-texto">
+                        <h2 id="nosotros">Nosotros</h2>
+                        <p>Nuestra plataforma web tiene como objetivo promover la cultura del <span class="texto-verde">Satoyama</span> para ayudar a las personas a conectarse con la naturaleza a través de la <span class="texto-verde">creacion</span> y <span class="texto-verde">cuidado</span> de <span class="texto-verde">huertos</span> en casa.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="funcionalides-seccion ">
+                <h2 class="funcionalidad-title texto-centrado" id="funcionalidad">Funcionalidades de Satoyama</h2>
+                <div class="flex-contenedor">
+                    <div class="card-funcionalidad">
+                        <div class="imagen-card">
+                            <img src="./assets/img/logo-huerto.png" alt="">
+                        </div>
+                        <div class="texto-card">
+                            <h3>Crea un huerto</h3>
+                            <p>A traves de una interfaz amigable y fácil de usar.</p>
+                        </div>
+                    </div>
+                    <div class="card-funcionalidad">
+                        <div class="imagen-card">
+                            <img src="./assets/img/logo-registrar.png" alt="">
+                        </div>
+                        <div class="texto-card">
+                            <h3>Lleva un registro</h3>
+                            <p>Completando un sencillo formulario  para observar el avance de tus plantas. </p>
+                        </div>
+                    </div>
+                    <div class="card-funcionalidad"> 
+                        <div class="imagen-card">
+                            <img src="./assets/img/logo-aprender.png" alt="">
+                        </div>
+                        <div class="texto-card">
+                            <h3>Aprende</h3>
+                            <p>Con nuestras guías paso a paso para cuidar tu huerto.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contacto-seccion">
+                <div class="contacto-headline">
+                    <div class="linea"></div>
+                    <h2 class="texto-centrado" id="contacto">Contacto</h2>
+                    <div class="linea"></div>
+                </div>
+                <div class="contacto-contenedor">
+                    <div class="contacto-texto">
+                        <p class="texto">Quiero saber más sobre nueva información y características de la app.</p>
+                        <form action="" class="formulario">
+                            <input type="email" name="email" class="input" id="email" placeholder="Ingresa tu correo electronico aquí">
+                            <input type="submit" value="Enviar" class="boton">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p class="texto-centrado">Copyright © 2023 Satoyama</p>
+        </footer>
+    </div>
 </body>
+
 </html>
