@@ -27,7 +27,7 @@ async function iniciarSesion(){
         // Guardar la respuesta del lado del browser
         localStorage.token = respuesta;
         localStorage.email = datos.email;
-        window.location.href = 'huertos.html'
+        window.location.href = 'catalogo-aguacate.html';
     }else{
         alert("Las credenciales son incorrectas");
     }

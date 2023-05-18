@@ -159,6 +159,7 @@ html {
 .riego-imagen{
     background-image: url('../assets/img/riego.png');
     background-repeat: no-repeat;
+    background-position: center;
     object-fit: cover;
     grid-area: imagen;
     min-height: 350px;
