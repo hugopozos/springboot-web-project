@@ -109,7 +109,7 @@ header{
 }
 /* === HERO ===*/
 .hero{
-    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url('/Satoyama-paginas/assets/img/hero-imagen-santoyama.jpg');
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url("/assets/img/hero-imagen-santoyama-2.jpg");
     background-repeat: no-repeat;
     background-position: center;
     min-height: 350px;
@@ -222,7 +222,7 @@ header{
 }
 /* CONTACTO */
 .contacto-seccion{
-    background-image: url('/Satoyama-paginas/assets/img/contacto-imagen.png');
+    background-image: url('/assets/img/contacto-imagen.png');
     background-position: right 40px;
     background-repeat: no-repeat;
     background-size: 25rem;
