@@ -1,0 +1,273 @@
+/* Estilos generales*/
+:root{
+    --color-primario:#508484; 
+    --color-secundario:#B6D03B; 
+    --color-terciario:#00A7E1; 
+    --blanco:#F4F4F9; 
+    --negro:#000; 
+    --separacion:5.25rem;
+    --fuente:'Assistant', sans-serif;
+}
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+body{
+    font-family: var(--fuente);
+    background-color: var(--blanco);
+    margin: 0;
+
+    font-size: 1.2rem;
+}
+h2{
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    font-weight: 400;
+}
+h3{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+/* Utilidades */
+.texto-verde{
+    color: var(--color-secundario);
+}
+.texto-centrado{
+    text-align: center;
+}
+.boton{
+    color: var(--blanco);
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    box-shadow: 3px 3px  rgba(193, 193, 193, 0.345);
+}
+.boton:hover{
+    background-color: hsla(70, 61%, 52%, 0.752);
+}
+.boton-secundario{
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    color: var(--color-primario);
+}
+.boton-secundario:hover{
+    color: #000;
+    border-color: #000;
+    background-color: transparent;
+}
+.input{
+    font-size: inherit;
+    padding: 1rem;
+    min-width: 200px;
+    border: 1px solid var(--color-primario);
+    border-radius: 10px;
+    flex: 1;
+}
+
+/*=== HEADER ===*/
+header{
+    color: var(--color-primario);
+}
+.contenedor-header{
+    padding: 0.3rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-contenedor{
+    display: flex;
+    gap: 0.5rem;
+}
+.logo-contenedor img{
+    width: 50px;
+    object-fit: contain;
+}
+.barra-navegacion{
+    display: flex;
+    gap: 1.5rem;
+}
+.menu-item a{
+    transition-property: color;
+    transition-duration: 0.3s;
+}
+.menu-item a:hover{
+    color: #000;
+}
+.contenedor-botones{
+    display: flex;
+    gap: 2rem;
+}
+/* === HERO ===*/
+.hero{
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)),url('/Satoyama-paginas/assets/img/hero-imagen-santoyama.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 350px;
+    margin-bottom: calc(var(--separacion)/2);
+    padding: 2rem 0;
+}
+.hero p{
+    color: var(--blanco);
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+
+}
+.texto-comillas{
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 900;
+    font-size: 3.0rem;
+    line-height: 1.3;
+    width: 40%;
+}
+.hero .contenedor-botones{
+    justify-content: center;
+}
+.contenedor-botones p{
+    font-size: 2.0rem;
+    font-weight: 300;
+    margin: 0;
+}
+.btn-transparente{
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    font-weight: 400;
+}
+.btn-transparente:hover{
+    cursor: pointer;
+    border: 1px solid var(--blanco);
+    color: var(--blanco);
+}
+/* === NOSOTROS === */
+.nosotros-seccion{
+    margin-bottom: calc(var(--separacion)/2);
+}
+.nosotros-contenedor{
+    display: grid;
+    grid-template-columns: 30% 20rem;
+    gap: var(--separacion);
+    place-content: center;
+    padding: 2rem 1rem;
+}
+.imagen-contenedor{
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 3px rgb(0,0,0,0.2);
+    order: 1;
+    justify-self: right;
+    height: 350px;
+}
+.imagen-contenedor img{
+    height: 100%;
+}
+.nosotros-texto{
+    line-height: 1.5;
+    align-self: flex-start;
+}
+/* FUNCIONALIDAD */
+.funcionalides-seccion{
+    background-color: var(--color-primario);
+    margin-bottom: 1.2rem;
+    padding: 1.5rem 1.3rem;
+}
+.flex-contenedor{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.funcionalidad-title{
+    color: var(--blanco);
+    font-weight: 600;
+    width: 20%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+.card-funcionalidad{
+    background-color: var(--blanco);
+    border-radius: 10px;
+    padding: 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap:1rem; 
+    flex-basis: 350px;
+
+    box-shadow: 3px 3px 2px rgb(0,0,0,0.2);
+}
+.imagen-card {
+    flex-grow: 1;
+}
+.imagen-card img{
+    min-width: 60px;
+}
+.texto-card h3{
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+.texto-card p{
+    margin-top: 0;
+    line-height: 1.5;
+}
+/* CONTACTO */
+.contacto-seccion{
+    background-image: url('/Satoyama-paginas/assets/img/contacto-imagen.png');
+    background-position: right 40px;
+    background-repeat: no-repeat;
+    background-size: 25rem;
+    min-height: 30rem;
+    padding: 1rem;
+}
+.contacto-headline{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 1.2rem;
+}
+.contacto-headline h2{
+    margin:0
+}
+.linea{
+    background-color: var(--color-primario);
+    height: 3px;
+    flex: 1;
+    border-radius: 2px;
+}
+.contacto-contenedor{
+    width: 40%;
+    margin-left: 1.2rem;
+}
+.texto{
+    font-size: 2.5rem;
+}
+.formulario{
+    display: flex;
+    align-items: center;
+}
+input[type=submit]{
+    border: none;
+    font-size: inherit;
+    padding: 0.5rem 1.5rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer{
+    background-color: #508484;
+    color: var(--blanco);
+    padding: 0.5rem;
+}

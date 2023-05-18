@@ -1,0 +1,202 @@
+:root {
+    --blue: #4e73df;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #e74a3b;
+    --orange: #fd7e14;
+    --yellow: #f6c23e;
+    --green: #1cc88a;
+    --teal: #20c9a6;
+    --cyan: #36b9cc;
+    --white: #fff;
+    --gray: #858796;
+    --gray-dark: #5a5c69;
+    --primary: #508484; ;
+    --secondary: #B6D03B;
+    --success: #1cc88a;
+    --info: #36b9cc;
+    --warning: #f6c23e;
+    --danger: #e74a3b;
+    --light: #f8f9fc;
+    --dark: #000;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: 'Assistant', sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+.bold{
+    font-weight: 600;
+}
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    display: block;
+}
+body {
+    margin: 0;
+    font-family: var(--font-family-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--dark);
+    text-align: left;
+    background-color: #fff;
+}
+main{
+    width: 100%;
+}
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.catalogo-wrapper{
+    padding: 1.5rem !important;
+    padding-bottom: 0 !important;
+}
+.catalogo-wrapper .flex-wrapper{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+.catalogo-wrapper .flex-wrapper img{
+    width: 100px;
+    object-fit: contain;
+}
+.catalogo-wrapper header h1{
+    color: var(--primary);
+    font-weight: 700;
+}
+.contacto-headline{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1.2rem;
+}
+.contacto-headline h2{
+    margin:0; 
+    color: var(--primary);
+}
+.contacto-headline .linea{
+    background-color: var(--primary);
+    height: 3px;
+    flex: 1;
+    border-radius: 2px;
+}
+/* DATOS GENERALES */
+.datos-generales .grid-wrapper{
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill,minmax(400px,1fr)) !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.25rem;
+}
+.datos-generales .grid-wrapper .texto-general{
+    background: rgba(182, 208, 59, 0.3);
+    padding: 1rem;
+    border-radius: 10px;
+}
+.datos-generales .grid-wrapper .texto-general p{
+    font-weight: 300;
+}
+/* DETALLES */
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-template-areas: 'card-primero card-primero'
+                            'permite beneificios'
+                            'funciona funciona';
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+}
+.detalles-card{
+    box-shadow: 2px 2px 2px var(--gray),
+                -0.5px -0.5px 5px var(--gray);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+}
+.detalles-card h2{
+    margin-bottom: 1rem;
+}
+.detalles-card:first-child{
+    display: flex;
+    grid-area: card-primero;
+}
+.detalles-card:first-child .texto-chico{
+    flex: 1 2 300px;
+    align-self: center;
+}
+.detalles-card:first-child .imagen-contenedor{
+    flex: 1;
+    border-radius: 77px;
+    overflow: hidden;
+}
+.detalles-card .imagen-contenedor img{
+    object-fit: cover;
+    height:100%;
+}
+.permite{
+    grid-area: permite;
+}
+.beneficios{
+    grid-area: beneificios;
+}
+.beneficios .lista-beneficios li{
+    text-align: left;
+}
+.funciona{
+    grid-area: funciona;
+}
+
+.plantas-atacan{
+    background-image:linear-gradient(to bottom,rgb(0,0,0,0.3),rgb(0,0,0,0.3)) ,url("../assets/img/background-tecnica-riego.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 2.5rem;
+    font-weight: 400;
+    min-height: 300px;
+    display: grid;
+}
+.plantas-atacan .flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.plantas-atacan .flex-container p{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.tecnicas-goteo{
+    background:url('../assets/img/planta-footer.png');
+    background-position: center;
+    border-radius: 50px;
+    min-height: 180px;
+    display: grid;
+    place-content: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.tecnicas-goteo a{
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
