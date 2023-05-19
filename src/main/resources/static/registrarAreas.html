@@ -11,7 +11,7 @@
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link href="css/registrarHuertos.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
@@ -163,79 +163,44 @@
             <!----------------------------------------- Page Content  ------------------------------------------------>
             <div class="container-fluid">
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Inicio</h1>
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <br><br>
+                                        <h1 class="h4 text-gray-900 mb-4">¡Crea un nuevo Area!</h1>
+                                    </div>
+                                    <!-- Formulario de registro -->
+                                    <form method="POST" class="user">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="txtNombreArea"
+                                                   placeholder="Nombre del Area" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control form-control-user" id="txtDescripcion"
+                                                      placeholder="¿Como es tu area? ¿Que plantas habra aqui?" style="resize: none;" maxlength="100" required></textarea>
+                                        </div>
+                                        <hr>
+                                            <div class="col-sm-6">
+                                                <div class="dropdown mb-4 show">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Plantas
+                                                    </button>
+                                                    <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
+                                                        <a class="dropdown-item" href="#">Action</a>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                        <!-- ESPACIO 1 / MIHUERTO -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Gestor de Huertos</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="huertos" width="100%" cellspacing="0">
-                                        <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Huerto</th>
-                                            <th>Dueño</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        </tbody>
-                                    </table>
+
+                                        <a onclick="" href="areas.html" class="btn btn-primary btn-user btn-block">
+                                            Crear
+                                        </a>
+                                    </form>
                                 </div>
-                                <a href="registrarHuertos.html" class="btn btn-primary btn-icon-split">
-                                    <span class="icon text-white-50"><i class="fas fa-flag"></i></span>
-                                    <span class="text">Crear nuevo</span>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <!-- ESPACIO 2 / GUIAS -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Guias de plantas</h6>
-                            </div>
-                            <div class="card-body">
-                                <p>En esta seccion, encontrarás una gran selección de guías de plantas útiles para cuidar y mantener tus
-                                    plantas en su mejor estado. Entre ellas, hallarás <code>guías de riego</code> para asegurarte de
-                                    que tus plantas reciban la cantidad adecuada de agua, así como <code>guías de control de
-                                    plagas</code> para protegerlas de enfermedades y plagas dañinas, asi como, <code>guias de cultivo</code>. </p>
-                                <p>Estas guías te ayudarán a mantener tus plantas saludables y vibrantes, permitiéndote
-                                    disfrutar de un hermoso jardín o <code>espacio verde</code> en todo momento.</p>
-
-                                <a href="#" class="btn btn-google btn-block"><i
-                                        class=""></i> Guias de cultivo</a>
-                                <a href="#" class="btn btn-facebook btn-block"><i
-                                        class=""></i> Guias de riego</a>
-                                <a href="#" class="btn btn-facebook btn-block"><i
-                                        class=""></i> Guias de control de plagas</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- ESPACIO 3 / CATALOGO -->
-                    <div class="col-lg-6">
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Catalogo de plantas</h6>
-                            </div>
-                            <div class="card-body">
-                                <p>Aqui encontrarás una amplia variedad de opciones disponibles para embellecer y
-                                    complementar tu <code>espacio verde</code>.</p>
-
-                                <div class="my-2"></div>
-                                <a href="#" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                    <span class="text">Aguacate</span>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -247,8 +212,8 @@
 
 
         <!-- Footer -->
-            <br>
-            <br>
+        <br>
+        <br>
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
