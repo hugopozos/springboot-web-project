@@ -5,18 +5,21 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "tb_huertos") // Declaramos que vamos a usar la tabla usuarios
+@Table(name = "tb_huerto") // Declaramos que vamos a usar la tabla usuarios
 public class Huerto {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY) //Genera valores unicos de clave primaria de una entidad
-    @Getter @Setter @Column(name = "id")
-    private Long id;
+    @Getter @Setter @Column(name = "CodigoHuerto")
+    private Long CodigoHuerto;
 
-    @Getter @Setter @Column(name = "nombre")
-    private String nombre;
+    @Getter @Setter @Column(name = "NombreHuerto")
+    private String NombreHuerto;
 
-    @Getter @Setter @Column(name = "id_usuario")
-    private Long id_usuario;
+    @Getter @Setter @Column(name = "Descripcion")
+    private String Descripcion;
+
+    @Getter @Setter @Column(name = "NumeroUsuario")
+    private Long NumeroUsuario;
 
 }

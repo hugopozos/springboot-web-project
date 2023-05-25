@@ -14,6 +14,17 @@
     <link href="css/sb-admin-2.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Verificar si el token está almacenado en el localStorage
+            const token = localStorage.getItem('token');
+            if (!token) {
+                // Redirigir al usuario a la página de inicio de sesión si el token no está presente
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </head>
 <body id="page-top">
 <!-- Page Wrapper -->
@@ -282,7 +293,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary"  onclick="logout()">Logout</a>
             </div>
         </div>
     </div>

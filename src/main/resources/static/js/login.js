@@ -8,11 +8,17 @@ $(document).ready(function() {
     });
 });
 
-async function iniciarSesion(){
-    let datos = {};
-    datos.email    = document.getElementById('txtEmail').value;
-    datos.password = document.getElementById('txtPassword').value;
-    
+async function iniciarSesion() {
+    let datos = {
+        email: document.getElementById('txtEmail').value,
+        password: document.getElementById('txtPassword').value
+    };
+
+    if (datos.email.trim() === '' || datos.password.trim() === '') {
+        alert('Por favor, ingresa el correo electrónico y la contraseña.');
+        return;
+    }
+
     const request = await fetch('api/login', {
         method: 'POST',
         headers: {
@@ -23,12 +29,11 @@ async function iniciarSesion(){
     });
 
     const respuesta = await request.text();
-    if (respuesta != 'FAIL'){
-        // Guardar la respuesta del lado del browser
+    if (respuesta != 'FAIL') {
         localStorage.token = respuesta;
         localStorage.email = datos.email;
-        window.location.href = 'huertos.html'
-    }else{
+        window.location.href = 'huertos.html';
+    } else {
         alert("Las credenciales son incorrectas");
     }
 }
