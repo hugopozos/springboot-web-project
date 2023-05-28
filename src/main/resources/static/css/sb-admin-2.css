@@ -24,7 +24,7 @@
     --white: #fff;
     --gray: #858796;
     --gray-dark: #5a5c69;
-    --primary: #508484; ;
+    --primary: hsl(180, 25%, 42%); ;
     --secondary: #B6D03B;
     --success: #1cc88a;
     --info: #36b9cc;
@@ -52,7 +52,7 @@
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #fff;
+    color: #000;
     text-align: left;
     background-color: #fff;
   }
@@ -527,8 +527,9 @@
   
   code {
     font-size: 87.5%;
-    color: #e83e8c;
+    color: var(--primary);
     word-wrap: break-word;
+    font-weight: 700;
   }
   
   a > code {
@@ -2400,8 +2401,8 @@
   
   .btn-primary:hover {
     color: #fff;
-    background-color: #2e59d9;
-    border-color: #2653d4;
+    background-color: hsla(70, 61%, 52%, 0.86);
+    border-color: hsla(70, 61%, 52%, 0.86);
   }
   
   .btn-primary:focus, .btn-primary.focus {
@@ -2420,8 +2421,8 @@
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #2653d4;
-    border-color: #244ec9;
+    background-color:var(--primary);
+    border-color: var(--primary);
   }
   
   .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -10940,13 +10941,13 @@
   
   .btn-google {
     color: #fff;
-    background-color: #ea4335;
+    background-color: var(--primary);
     border-color: #fff;
   }
   
   .btn-google:hover {
     color: #fff;
-    background-color: #e12717;
+    background-color: #17a673;
     border-color: #e6e6e6;
   }
   
@@ -10977,13 +10978,13 @@
   
   .btn-facebook {
     color: #fff;
-    background-color: #3b5998;
+    background-color: var(--secondary);
     border-color: #fff;
   }
   
   .btn-facebook:hover {
     color: #fff;
-    background-color: #30497c;
+    background-color: hsl(70, 61%, 52%, 0.86);
     border-color: #e6e6e6;
   }
   

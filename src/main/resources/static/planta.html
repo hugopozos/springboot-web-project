@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/logo.png">
+
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
@@ -21,94 +23,109 @@
 
     <!---------------------------------------------- Sidebar --------------------------------------------------------->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="huertos.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Satoyama<sup></sup></div>
+            <div class="sidebar-brand-text mx-3">Satoyama</div>
         </a>
-
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="huertos.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Inicio</span></a>
-        </li>
-
+    
         <!-- Divider -->
-        <hr class="sidebar-divider">
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Interfaz
-        </div>
-
-        <!-- Nav Item - Tables -->
+        <hr class="sidebar-divider my-0">
+    
+        <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
             <a class="nav-link" href="huertos.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Huertos</span></a>
+                <i class="menu icono"></i>
+                <span>Menu</span></a>
         </li>
-
+    
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
+        <hr class="sidebar-divider">
+    
         <!-- Heading -->
-        <div class="sidebar-heading">
-            Utilidades
-        </div>
-
+    
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
+                aria-expanded="true" aria-controls="collapseTwo">
+                <i class="catalogo icono"></i>
                 <span>Catalogo</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Plantas:</h6>
-                    <a class="collapse-item" href="#">Aguacate</a>
-                    <h6 class="collapse-header">Plagas:</h6>
-                    <a class="collapse-item" href="#">Mosca blanca</a>
+                    <h6 class="collapse-header">Catalogos principales</h6>
+                    <a class="collapse-item" href="./catalogo-mosca.html">Mosca Blanca</a>
+                    <a class="collapse-item" href="./catalogo-aguacate.html">Aguacate</a>
+                    <a class="collapse-item" href="./catalogo-riego.html" style="overflow: hidden;">Técnicas de Riego por Goteo</a>
                 </div>
             </div>
         </li>
-
+    
+        <hr class="sidebar-divider">
         <!-- Nav Item - Utilities Collapse Menu -->
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="guias icono"></i>
                 <span>Guias</span>
             </a>
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
+                data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Guias de cultivo:</h6>
-                    <a class="collapse-item" href="#">#</a>
-                    <h6 class="collapse-header">Guias de control de plaga:</h6>
-                    <a class="collapse-item" href="#">#</a>
-                    <h6 class="collapse-header">Guias de riego:</h6>
-                    <a class="collapse-item" href="#">#</a>
+                    <h6 class="collapse-header">Guias principales:</h6>
+                    <a class="collapse-item" href="./Control-Plagas.html">Control de plagas</a>
+                    <a class="collapse-item" href="./Control-Riego.html">Control de riego</a>
                 </div>
             </div>
         </li>
-
+    
         <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
+        <hr class="sidebar-divider">
+    
+        <!-- Heading -->
+    
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                aria-expanded="true" aria-controls="collapsePages">
+                <i class="huertos icono"></i>
+                <span>Huertos</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Tus huertos</h6>
+                    <a class="collapse-item" href="huerto.html">Huertos</a>
+                    <h6 class="collapse-header">Mas opciones</h6>
+                    <a class="collapse-item" href="login.html">Cerrar sesión</a>
+                    <div class="collapse-divider"></div>
+                </div>
+            </div>
+        </li>
+    
+                    <!-- Divider -->
+        <hr class="sidebar-divider">
+    
+    
+    
+    
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
-        <!-- Sidebar Message -->
-        <div class="sidebar-card d-none d-lg-flex">
-            <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-            <p class="text-center mb-2"><strong>Satoyama</strong> tiene version premium, ¡Suscribete!</p>
-            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">¡Vuelvete Pro!</a>
+    
+        <!-- Sidebar Message:*Pensando en quitarlo -->
+        <div class="sidebar-card d-none d-lg-flex" id="sidebar-card">
+            <img class="sidebar-card-illustration mb-2" src="assets/img/upgrade-pro.svg" alt="...">
+            <p class="text-center mb-2"><strong>Satoyama</strong> Te puede ofrecer varias funcionalidades si deseas escoger uno de los maravillosos planes que tenemos preparados para ustedes</p>
+            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Actualiza a PRO!</a>
+        </div>
+    
+        <div class="contacto-ayuda" id="contacto">
+            <p class=>¿Necesitas ayuda?
+                mandar un correo a:</p>
+            <p class="email-bold">satoyama_ayuda23@gmail.com</p>
         </div>
     </ul>
     <!------------------------------------------ End of Sidebar ------------------------------------------------->
