@@ -2394,8 +2394,8 @@
   
   .btn-primary {
     color: #fff;
-    background-color: #4e73df;
-    border-color: #4e73df;
+    background-color: var(--secondary);
+    border-color: var(--secondary);
   }
   
   .btn-primary:hover {
@@ -2468,8 +2468,8 @@
   
   .btn-success {
     color: #fff;
-    background-color: #1cc88a;
-    border-color: #1cc88a;
+    background-color: var(--primary);
+    border-color: var(--primary);
   }
   
   .btn-success:hover {
@@ -9630,7 +9630,7 @@
   }
   
   .text-primary {
-    color: #4e73df !important;
+    color: var(--primary) !important;
   }
   
   a.text-primary:hover, a.text-primary:focus {
