@@ -1,6 +1,6 @@
 // Call the dataTables jQuery plugin
 $(document).ready(function() {
-    cargarHuertos();
+    //cargarHuertos();
     $('#tb_huertos').DataTable();
     actualizarEmailDelUsuario();
 });
@@ -9,14 +9,18 @@ function actualizarEmailDelUsuario() {
     document.getElementById('txt-email-usuario').outerHTML = localStorage.email;
 }
 
+function logout() {
+    localStorage.removeItem('token'); // Elimina el token de la sesión
+    window.location.href = 'login.html'; // Redirige al usuario a login.html
 
-async function cargarHuertos() {
+}
+
+/*async function cargarHuertos() {
     const request = await fetch('api/huertos', {
         method: 'GET',
         headers: getHeaders()
     });
     const usuarios = await request.json();
-
 
     let listadoHtml = '';
     for (let huerto of huertos) {
@@ -50,6 +54,10 @@ async function eliminarHuerto(id) {
         method: 'DELETE',
         headers: getHeaders()
     });
+
+    location.reload()
+}
+*/
 
     location.reload()
 }

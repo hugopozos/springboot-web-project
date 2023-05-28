@@ -138,4 +138,27 @@ public class JWTUtil {
         return false;
     }
 
+    /**
+     * Método para obtener el ID del usuario desde el token JWT.
+     *
+     * @param jwt el token JWT
+     * @return el ID del usuario si el token es válido, -1 en caso contrario.
+     */
+    public int getUserId(String jwt) {
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(DatatypeConverter.parseBase64Binary(key))
+                    .parseClaimsJws(jwt).getBody();
+
+            String userId = claims.getId();
+            if (userId != null && !userId.isEmpty()) {
+                return Integer.parseInt(userId);
+            }
+        } catch (JwtException | IllegalArgumentException e) {
+            log.error("Error al procesar el token", e);
+        }
+
+        return -1;
+    }
+
 }
