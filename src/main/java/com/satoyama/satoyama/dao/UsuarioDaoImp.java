@@ -63,4 +63,19 @@ public class UsuarioDaoImp implements UsuarioDao {
         return null;
 
     }
+
+    public Usuario obtenerUsuarioPorId(long idUsuario) {
+        String query = "FROM Usuario WHERE id = :idUsuario";
+        List<Usuario> lista = entityManager.createQuery(query)
+                .setParameter("idUsuario", idUsuario)
+                .getResultList();
+
+        if (!lista.isEmpty()) {
+            return lista.get(0);
+        }
+
+        return null;
+    }
+
+
 }

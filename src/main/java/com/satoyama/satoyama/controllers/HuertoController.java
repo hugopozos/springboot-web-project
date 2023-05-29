@@ -48,29 +48,29 @@ public class HuertoController {
         return usuarioId != null;
     }
 
-    @PostMapping("/registrarHuertos")
-    public ResponseEntity<String> registrarHuertos(@RequestBody Huerto huerto, HttpServletRequest request) {
-        // Obtener el token de autorización del encabezado de la solicitud
-        String authorizationHeader = request.getHeader("Authorization");
+    @PostMapping("/api/registrarHuertos")
+    public void registrarHuertos(@RequestBody Map<String, Object> huertoData) {
+        String nombreHuerto = (String) huertoData.get("nombreHuerto");
+        String descripcion = (String) huertoData.get("descripcion");
+        long idUsuario = Long.parseLong(String.valueOf(huertoData.get("idUsuario")));
 
-        // Verificar si el token existe y comienza con "Bearer "
-        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            String token = authorizationHeader.substring(7); // Eliminar "Bearer " del encabezado
+        System.out.println("Nombre del Huerto: " + nombreHuerto);
+        System.out.println("Descripción: " + descripcion);
+        System.out.println("ID del Usuario: " + idUsuario);
 
-            // Validar el token y obtener el ID del usuario
-            int userId = jwtUtil.getUserId(token);
-            if (userId != -1) {
-                // Realizar las operaciones de registro de huertos aquí
+        Usuario usuario = usuarioDao.obtenerUsuarioPorId(idUsuario);
 
-                // Mostrar el ID del usuario en el debugger
-                System.out.println("ID del usuario: " + userId);
+        Huerto huerto = new Huerto();
+        huerto.setNombreHuerto(nombreHuerto);
+        huerto.setDescripcion(descripcion);
+        huerto.setNumeroUsuario(usuario.getId());
 
-                // Retornar una respuesta exitosa
-                return ResponseEntity.ok("Huerto guardado correctamente");
-            }
-        }
+        huertoDao.registrarHuertos(huerto);
+        // Aquí puedes realizar otras acciones con los datos recibidos
 
-        // Si el token es inválido o no se proporciona, retornar una respuesta de error
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error al guardar huerto");
+        // Por ejemplo, puedes retornar una respuesta al cliente
+        // return new ResponseEntity<>("Huerto registrado correctamente", HttpStatus.OK);
     }
+
+
 }
