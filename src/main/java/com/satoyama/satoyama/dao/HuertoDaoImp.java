@@ -31,8 +31,21 @@ public class HuertoDaoImp implements HuertoDao{
     }
 
     @Override
+    @Transactional
+    public List<Huerto> getmiHuerto(Long id) {
+        return huertoRepository.findByCodigoHuerto(id);
+    }
+
+    @Override
     public void registrarHuertos(Huerto huerto) {
         huertoRepository.save(huerto);
     }
+
+    @Override
+    public void eliminar(Long id) {
+        Huerto huerto = entityManager.find(Huerto.class,id);
+        entityManager.remove(huerto);
+    }
+
 
 }

@@ -43,6 +43,11 @@ public class HuertoController {
         return huertoDao.getHuertos(id);
     }
 
+    @RequestMapping(value = "api/mihuerto/{id}", method = RequestMethod.GET)
+    public List<Huerto> getmiHuerto(@PathVariable Long id) {
+        return huertoDao.getmiHuerto(id);
+    }
+
 
     @PostMapping("/api/registrarHuertos")
     public ResponseEntity<String> registrarHuertos(@RequestBody Map<String, Object> huertoData) {
@@ -66,6 +71,12 @@ public class HuertoController {
         }
 
         return new ResponseEntity<>("Huerto registrado correctamente", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "api/eliminarHuerto/{id}", method = RequestMethod.DELETE)
+    public void eliminarHuerto(@RequestHeader(value="Authorization")
+                         @PathVariable Long id) {
+        huertoDao.eliminar(id);
     }
 
 

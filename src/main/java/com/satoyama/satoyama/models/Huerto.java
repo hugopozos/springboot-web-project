@@ -13,7 +13,7 @@ public class Huerto {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY) //Genera valores unicos de clave primaria de una entidad
     @Column(name = "codigo_huerto")
-    private Long CodigoHuerto;
+    private Long codigoHuerto;
 
     @Column(name = "nombre_huerto")
     private String NombreHuerto;
