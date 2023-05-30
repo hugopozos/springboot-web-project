@@ -2,26 +2,16 @@ package com.satoyama.satoyama.controllers;
 
 import com.satoyama.satoyama.dao.AreaDao;
 import com.satoyama.satoyama.dao.HuertoDao;
-import com.satoyama.satoyama.dao.UsuarioDao;
 import com.satoyama.satoyama.models.Area;
 import com.satoyama.satoyama.models.Huerto;
-import com.satoyama.satoyama.models.Usuario;
 import com.satoyama.satoyama.utils.JWTUtil;
-import de.mkammerer.argon2.Argon2;
-import de.mkammerer.argon2.Argon2Factory;
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 @RestController
 public class AreaController {
@@ -41,13 +31,13 @@ public class AreaController {
     }
 
     @RequestMapping(value = "api/areas/{id}", method = RequestMethod.GET)
-    public List<Huerto> getAreas(@PathVariable Long id) {
-        return huertoDao.getHuertos(id);
+    public List<Area> getAreas(@PathVariable Long id) {
+        return areaDao.getAreas(id);
     }
 
     @RequestMapping(value = "api/miarea/{id}", method = RequestMethod.GET)
-    public List<Huerto> getmiArea(@PathVariable Long id) {
-        return huertoDao.getmiHuerto(id);
+    public Optional<Area> getmiArea(@PathVariable Long id) {
+        return areaDao.getmiArea(id);
     }
 
 

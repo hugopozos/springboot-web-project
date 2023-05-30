@@ -174,7 +174,7 @@
                     <h1 class="h4 text-gray-900 mb-4">¡Escoge una planta!</h1>
                   </div>
                   <!-- Formulario de registro -->
-                  <form method="POST" class="user">
+                  <form method="POST" class="plantas">
                     <hr>
                       <div class="col-sm-6">
                         <div class="dropdown mb-4 show">
@@ -182,11 +182,11 @@
                             Plantas
                           </button>
                           <div class="dropdown-menu animated--fade-in" aria-labelledby="dropdownMenuButton" style="">
-                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" id="dropdown-item">Aguacate</a>
                           </div>
                         </div>
                       </div>
-                    <a onclick="" href="areas.html" class="btn btn-primary btn-user btn-block">
+                    <a onclick="registrarPlanta()"  class="btn btn-primary btn-user btn-block">
                       Añadir
                     </a>
                   </form>
@@ -253,7 +253,7 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <!-- Page level custom scripts -->
-<script src="js/huertos.js"></script>
+<script src="js/registrarPlanta.js"></script>
 
 </body>
 </html>

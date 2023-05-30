@@ -23,4 +23,13 @@ public class Area {
     @JoinColumn(name = "codigo_huerto")
     private Huerto huerto;
 
+    public Area () {
+
+    }
+    public Area (Long idArea) {
+        this.id = idArea;
+        this.nombre = null;
+        this.huerto = null;
+    }
+
 }

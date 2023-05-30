@@ -2,7 +2,9 @@ package com.satoyama.satoyama.dao;
 
 import com.satoyama.satoyama.models.Area;
 import com.satoyama.satoyama.models.Huerto;
-import com.satoyama.satoyama.repositories.AreaRepositoy;
+import com.satoyama.satoyama.models.Planta;
+import com.satoyama.satoyama.repositories.HuertoRepository;
+import com.satoyama.satoyama.repositories.PlantaRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
@@ -14,31 +16,27 @@ import java.util.Optional;
 
 @Repository
 @Transactional
-public class AreaDaoImp implements AreaDao{
+public class PlantaDaoImp implements PlantaDao{
 
     @PersistenceContext
     EntityManager entityManager; // EntityManager permite interactuar con una base de datos
 
     @Autowired
-    AreaRepositoy areaRepository;
+    PlantaRepository plantaRepository;
+
 
     @Override
     @Transactional
-    public List<Area> getAreas(Long id) {
-        return areaRepository.findAllByHuertoCodigoHuerto(id);
+    public List<Planta> getPlantas(Long id) {
+        return plantaRepository.findAllByAreaId(id);
     }
 
-    @Override
-    @Transactional
-    public Optional<Area> getmiArea(Long id) {return areaRepository.findById(id);}
 
     @Override
-    public void registrarArea(Area area) { areaRepository.save(area);}
-
-    @Override
-    public void eliminar(Long id) {
-
+    public void registrarPlanta(Planta planta) {
+        plantaRepository.save(planta);
     }
-    @Override
-    public Area obtenerAreaporId(Long idArea){return areaRepository.findById(idArea).orElse(null);}
+
+
+
 }
