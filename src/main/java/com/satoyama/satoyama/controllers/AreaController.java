@@ -68,6 +68,7 @@ public class AreaController {
             area.setNombre(nombreArea);
             area.setDescripcion(descripcion);
             area.setHuerto(huerto);
+            System.out.println("huerto: "+huerto);
             areaDao.registrarArea(area);
         }
 

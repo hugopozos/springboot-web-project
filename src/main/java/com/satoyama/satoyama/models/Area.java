@@ -20,7 +20,7 @@ public class Area {
     private String Descripcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_huerto")
+    @JoinColumn(name = "codigo_huerto")
     private Huerto huerto;
 
 }
