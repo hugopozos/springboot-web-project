@@ -25,7 +25,7 @@ h2{
 }
 h3{
     font-size: 1.8rem;
-    font-weight: 300;
+    font-weight: 600;
 }
 img{
     max-width: 100%;
@@ -258,8 +258,7 @@ header{
     align-items: center;
 }
 input[type="email"]{
-    border: 3px solid;
-    border-color: transparent;
+    border: 2px solid;
 }
 input[type="email"]:focus{
     border-color: hsl(195, 100%, 44%);
@@ -268,11 +267,8 @@ input[type="email"]:focus{
 
 input[type="email"]:valid{
     border-color: #B6D03B;
-    
 }
-input[type="email"]:invalid{
-    border-color: hsla(9, 73%, 52%, 0.752);
-}
+
 input[type=submit]{
     border: none;
     font-size: inherit;
@@ -280,7 +276,53 @@ input[type=submit]{
     margin-left: 1rem;
     cursor: pointer;
 }
+.text-confirmacion{
+    opacity: 0;
+    color: red;
+}
+.show--text{
+    opacity: 1;
+}
+/* MODAL */
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000082;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
 
+    transition: opacity 0.6s;
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity 0.6s;
+}
+.modal-contenedor{
+    width: 90%;
+    margin: auto;
+    max-width: 400px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+.btn-modal{
+    border: none;
+    box-shadow: none;
+    margin-bottom: 1rem;
+}
+.btn-modal:hover{
+    cursor: pointer;
+}
+.correo-empresa{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #B6D03B;
+}
 /* FOOTER */
 footer{
     background-color: #508484;

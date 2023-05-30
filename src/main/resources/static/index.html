@@ -94,12 +94,22 @@
                 </div>
                 <div class="contacto-contenedor">
                     <div class="contacto-texto">
-                        <p class="texto">Quiero saber más sobre nueva información y características de la app.</p>
-                        <form action="" class="formulario">
-                            <input type="email" name="email" class="input" id="email" placeholder="Ingresa tu correo electronico aquí" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
-                            <input type="submit" value="Enviar" class="boton">
-                        </form>
+                        <p class="texto">Quiero saber más sobre nueva información y características de la app. Envianos un correo a:</p>
+                        <span class="correo-empresa">satoyama.ayuda23@gmail.com</span>
+                        <!-- <form action="" class="formulario">
+                            <input type="email" name="email" class="input" id="email" placeholder="Ingresa tu correo electronico aquí" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required >
+                            <input type="submit" value="Enviar" class="boton" id="btn-enviar">
+                        </form> -->
+                    
                     </div>
+                </div>
+            </section>
+
+            <section class="modal" id="modal">
+                <div class="modal-contenedor">
+                    <h3>¡Gracias por su interés!</h3>
+                    <p>Ya se envió la solicitud a su correo.</p>
+                    <button class="boton btn-modal" id="btn-modal">Aceptar</button>
                 </div>
             </section>
         </main>
@@ -108,5 +118,5 @@
         </footer>
     </div>
 </body>
-
+<script src="js/landing.js"></script>
 </html>
