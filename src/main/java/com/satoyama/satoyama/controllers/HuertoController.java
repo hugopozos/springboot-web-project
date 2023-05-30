@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 public class HuertoController {
@@ -37,19 +38,14 @@ public class HuertoController {
         this.jwtUtil = jwtUtil;
     }
 
-    @RequestMapping(value = "api/huertos", method = RequestMethod.GET)
-    public List<Huerto> getHuertos(@RequestHeader(value="Authorization") String token) {
-        if (!validarToken(token)) { return null; }
-        return huertoDao.getHuertos();
+    @RequestMapping(value = "api/huertos/{id}", method = RequestMethod.GET)
+    public List<Huerto> getHuertos(@PathVariable Long id) {
+        return huertoDao.getHuertos(id);
     }
 
-    private boolean validarToken(String token) {
-        String usuarioId = jwtUtil.getKey(token);
-        return usuarioId != null;
-    }
 
     @PostMapping("/api/registrarHuertos")
-    public void registrarHuertos(@RequestBody Map<String, Object> huertoData) {
+    public ResponseEntity<String> registrarHuertos(@RequestBody Map<String, Object> huertoData) {
         String nombreHuerto = (String) huertoData.get("nombreHuerto");
         String descripcion = (String) huertoData.get("descripcion");
         long idUsuario = Long.parseLong(String.valueOf(huertoData.get("idUsuario")));
@@ -60,16 +56,16 @@ public class HuertoController {
 
         Usuario usuario = usuarioDao.obtenerUsuarioPorId(idUsuario);
 
-        Huerto huerto = new Huerto();
-        huerto.setNombreHuerto(nombreHuerto);
-        huerto.setDescripcion(descripcion);
-        huerto.setNumeroUsuario(usuario.getId());
+        if (!Objects.isNull(usuario)) {
+            Huerto huerto = new Huerto();
+            huerto.setNombreHuerto(nombreHuerto);
+            huerto.setDescripcion(descripcion);
+            huerto.setUsuario(usuario);
 
-        huertoDao.registrarHuertos(huerto);
-        // Aquí puedes realizar otras acciones con los datos recibidos
+            huertoDao.registrarHuertos(huerto);
+        }
 
-        // Por ejemplo, puedes retornar una respuesta al cliente
-        // return new ResponseEntity<>("Huerto registrado correctamente", HttpStatus.OK);
+        return new ResponseEntity<>("Huerto registrado correctamente", HttpStatus.OK);
     }
 
 

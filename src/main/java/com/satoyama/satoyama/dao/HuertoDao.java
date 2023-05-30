@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface HuertoDao {
 
-    List<Huerto> getHuertos();
+    List<Huerto> getHuertos(Long id);
 
 
     void registrarHuertos(Huerto huerto);

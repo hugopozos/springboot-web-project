@@ -1,6 +1,7 @@
 package com.satoyama.satoyama.dao;
 
 import com.satoyama.satoyama.models.Usuario;
+import com.satoyama.satoyama.repositories.UsuarioRepository;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import jakarta.persistence.EntityManager;
@@ -8,6 +9,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,6 +21,9 @@ public class UsuarioDaoImp implements UsuarioDao {
     /* @PersistenceContext es una anotacion que se utiliza para inyectar EntityManager
     *  @Transactional indica que un metodo de una clase debe ser ejecutado dentro de una base de datos
     *  @Repository indica que una clase es un objeto de acceso de datos DAO */
+
+    @Autowired
+    UsuarioRepository usuarioRepository;
 
     @PersistenceContext
     EntityManager entityManager; // EntityManager permite interactuar con una base de datos
@@ -65,16 +70,7 @@ public class UsuarioDaoImp implements UsuarioDao {
     }
 
     public Usuario obtenerUsuarioPorId(long idUsuario) {
-        String query = "FROM Usuario WHERE id = :idUsuario";
-        List<Usuario> lista = entityManager.createQuery(query)
-                .setParameter("idUsuario", idUsuario)
-                .getResultList();
-
-        if (!lista.isEmpty()) {
-            return lista.get(0);
-        }
-
-        return null;
+        return usuarioRepository.findById(idUsuario).orElse(null);
     }
 
 

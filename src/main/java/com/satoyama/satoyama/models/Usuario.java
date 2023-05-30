@@ -24,4 +24,15 @@ public class Usuario {
 
     @Getter @Setter @Column(name = "password")
     private String password;
+
+    public Usuario () {
+
+    }
+    public Usuario (Long id) {
+        this.id = id;
+        this.nombre = null;
+        this.apellido = null;
+        this.email = null;
+        this.password = null;
+    }
 }
