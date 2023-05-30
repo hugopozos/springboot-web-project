@@ -1,25 +1,39 @@
 package com.satoyama.satoyama.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "tb_huerto") // Declaramos que vamos a usar la tabla usuarios
+@Data
 public class Huerto {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY) //Genera valores unicos de clave primaria de una entidad
-    @Getter @Setter @Column(name = "CodigoHuerto")
-    private Long CodigoHuerto;
+    @Column(name = "codigo_huerto")
+    private Long codigoHuerto;
 
-    @Getter @Setter @Column(name = "NombreHuerto")
+    @Column(name = "nombre_huerto")
     private String NombreHuerto;
 
-    @Getter @Setter @Column(name = "Descripcion")
+    @Column(name = "descripcion")
     private String Descripcion;
 
-    @Getter @Setter @Column(name = "NumeroUsuario")
-    private Long NumeroUsuario;
+    @ManyToOne
+    @JoinColumn(name = "numero_usuario")
+    private Usuario usuario;
+
+    public Huerto () {
+
+    }
+    public Huerto (Long idHuerto) {
+        this.codigoHuerto = idHuerto;
+        this.NombreHuerto = null;
+        this.Descripcion = null;
+        this.usuario = null;
+
+    }
 
 }

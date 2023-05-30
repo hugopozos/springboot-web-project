@@ -19,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @RestController
 public class HuertoController {
@@ -37,40 +38,46 @@ public class HuertoController {
         this.jwtUtil = jwtUtil;
     }
 
-    @RequestMapping(value = "api/huertos", method = RequestMethod.GET)
-    public List<Huerto> getHuertos(@RequestHeader(value="Authorization") String token) {
-        if (!validarToken(token)) { return null; }
-        return huertoDao.getHuertos();
+    @RequestMapping(value = "api/huertos/{id}", method = RequestMethod.GET)
+    public List<Huerto> getHuertos(@PathVariable Long id) {
+        return huertoDao.getHuertos(id);
     }
 
-    private boolean validarToken(String token) {
-        String usuarioId = jwtUtil.getKey(token);
-        return usuarioId != null;
+    @RequestMapping(value = "api/mihuerto/{id}", method = RequestMethod.GET)
+    public List<Huerto> getmiHuerto(@PathVariable Long id) {
+        return huertoDao.getmiHuerto(id);
     }
 
-    @PostMapping("/registrarHuertos")
-    public ResponseEntity<String> registrarHuertos(@RequestBody Huerto huerto, HttpServletRequest request) {
-        // Obtener el token de autorización del encabezado de la solicitud
-        String authorizationHeader = request.getHeader("Authorization");
 
-        // Verificar si el token existe y comienza con "Bearer "
-        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            String token = authorizationHeader.substring(7); // Eliminar "Bearer " del encabezado
+    @PostMapping("/api/registrarHuertos")
+    public ResponseEntity<String> registrarHuertos(@RequestBody Map<String, Object> huertoData) {
+        String nombreHuerto = (String) huertoData.get("nombreHuerto");
+        String descripcion = (String) huertoData.get("descripcion");
+        long idUsuario = Long.parseLong(String.valueOf(huertoData.get("idUsuario")));
 
-            // Validar el token y obtener el ID del usuario
-            int userId = jwtUtil.getUserId(token);
-            if (userId != -1) {
-                // Realizar las operaciones de registro de huertos aquí
+        System.out.println("Nombre del Huerto: " + nombreHuerto);
+        System.out.println("Descripción: " + descripcion);
+        System.out.println("ID del Usuario: " + idUsuario);
 
-                // Mostrar el ID del usuario en el debugger
-                System.out.println("ID del usuario: " + userId);
+        Usuario usuario = usuarioDao.obtenerUsuarioPorId(idUsuario);
 
-                // Retornar una respuesta exitosa
-                return ResponseEntity.ok("Huerto guardado correctamente");
-            }
+        if (!Objects.isNull(usuario)) {
+            Huerto huerto = new Huerto();
+            huerto.setNombreHuerto(nombreHuerto);
+            huerto.setDescripcion(descripcion);
+            huerto.setUsuario(usuario);
+
+            huertoDao.registrarHuertos(huerto);
         }
 
-        // Si el token es inválido o no se proporciona, retornar una respuesta de error
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Error al guardar huerto");
+        return new ResponseEntity<>("Huerto registrado correctamente", HttpStatus.OK);
     }
+
+    @RequestMapping(value = "api/eliminarHuerto/{id}", method = RequestMethod.DELETE)
+    public void eliminarHuerto(@RequestHeader(value="Authorization")
+                         @PathVariable Long id) {
+        huertoDao.eliminar(id);
+    }
+
+
 }

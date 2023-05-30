@@ -10,28 +10,26 @@ function actualizarEmailDelUsuario() {
 function logout() {
     localStorage.removeItem('token'); // Elimina el token de la sesión
     window.location.href = 'login.html'; // Redirige al usuario a login.html
-
 }
 
-function registrarHuertos() {
+function registrarAreas() {
     // Obtener los valores del formulario
-    var nombreHuerto = document.getElementById('txtNombreHuerto').value;
+    var nombreArea = document.getElementById('txtNombreArea').value;
     var descripcion = document.getElementById('txtDescripcion').value;
 
-    // Obtener el ID del usuario del token JWT
-    obtenerTokenJWT()
-        .then(function(key) {
-            var idUsuario = key;
+    // Obtener el ID del Huerto
+    var idHuerto = localStorage.getItem('huertoId');
+    console.log(idHuerto)
 
             // Crear el objeto de datos a enviar
             var datos = {
-                nombreHuerto: nombreHuerto,
+                nombreArea: nombreArea,
                 descripcion: descripcion,
-                idUsuario: idUsuario
+                idHuerto: idHuerto
             };
 
             // Realizar la petición POST usando fetch
-            fetch('/api/registrarHuertos', {
+            fetch('/api/registrarAreas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -53,36 +51,8 @@ function registrarHuertos() {
                     // Manejar los errores de la petición
                     console.error('Error:', error);
                     // Aquí puedes mostrar un mensaje de error al usuario
-                });
-        })
-        .catch(function(error) {
-            console.error('Error:', error);
-            // Aquí puedes manejar el error y mostrar un mensaje al usuario si es necesario
-        });
-}
-function obtenerTokenJWT() {
-    return fetch('api/obtenerToken', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-        .then(function(response) {
-            if (response.ok) {
-                return response.text(); // Parsear la respuesta como texto
-            }
-            throw new Error('Error al obtener el token JWT del servidor');
-        })
-        .then(function(data) {
-            // Obtener el token key del texto de respuesta
-            var key = data.replace('Token key: ', '');
+                })
 
-            // Mostrar el token key en la consola
-            console.log('Token key:', key);
-
-            // Devolver el token key
-            return key;
-        })
         .catch(function(error) {
             console.error('Error:', error);
             // Aquí puedes manejar el error y mostrar un mensaje al usuario si es necesario
