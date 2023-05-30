@@ -191,7 +191,7 @@
       <!----------------------------------------- Page Content  ------------------------------------------------>
       <div class="container-fluid">
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Huerto (Variable)</h1>
+        <h1 class="h3 mb-2 text-gray-800" id="nombre-huerto"></h1>
         <p class="mb-4">Descripcion del huerto que puso el usuario</p>
 
 
@@ -199,31 +199,6 @@
         <div class="row">
           <div class="col-xl-8 col-lg-10">
             <!-- ESPACIO 1 / MIHUERTO -->
-            <div class="card shadow mb-4">
-              <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Areas de cultivo</h6>
-              </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table table-bordered" id="huertos" width="100%" cellspacing="0">
-                    <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Area de cultivo</th>
-                      <th>Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                  </table>
-                </div>
-                <a href="registrarAreas.html" class="btn btn-primary btn-icon-split">
-                  <span class="icon text-white-50"><i class="fas fa-flag"></i></span>
-                  <span class="text">Crear nuevo</span>
-                </a>
-              </div>
-            </div>
-
             <div class="card shadow mb-4">
               <div class="card-header py-3">
                 <h6 class="m-0 font-weight-bold text-primary">Areas de cultivo</h6>
@@ -242,12 +217,14 @@
                     </tbody>
                   </table>
                 </div>
-                <a href="registrarHuertos.html" class="btn btn-primary btn-icon-split">
+                <a href="registrarAreas.html" class="btn btn-primary btn-icon-split">
                   <span class="icon text-white-50"><i class="fas fa-flag"></i></span>
                   <span class="text">Crear nuevo</span>
                 </a>
               </div>
             </div>
+
+
 
           </div>
 
@@ -359,7 +336,7 @@
 <script src="vendor/datatables/jquery.dataTables.min.js"></script>
 <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 <!-- Page level custom scripts -->
-<script src="js/huertos.js"></script>
+<script src="js/huerto.js"></script>
 
 </body>
 </html>

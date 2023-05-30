@@ -1,47 +1,90 @@
 $(document).ready(function() {
+    //cargarHuertos();
     actualizarEmailDelUsuario();
-    // Agrega el controlador de eventos de teclado a todos los campos de entrada dentro del formulario
-    $('form.huerto').on('keypress', function(event) {
-        if (event.which === 13) {
-            event.preventDefault(); // previene el comportamiento por defecto del Enter (enviar el formulario)
-            registrarHuertos(); // llama a la función registrarUsuarios()
-        }
-    });
 });
 
 function actualizarEmailDelUsuario() {
     document.getElementById('txt-email-usuario').outerHTML = localStorage.email;
 }
 
-async function registrarHuertos() {
-    let datos = {};
-    const token = localStorage.getItem('token');
+function logout() {
+    localStorage.removeItem('token'); // Elimina el token de la sesión
+    window.location.href = 'login.html'; // Redirige al usuario a login.html
 
-    datos.nombreHuerto = document.getElementById('txtNombreHuerto').value;
-    datos.descripcion  = document.getElementById('txtDescripcion').value;
+}
 
-        fetch('/api/registrarHuertos', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(datos)
-        })
-         .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al guardar huerto');
-            }
-            return response.text();
-        })
-            .then(data => {
-                console.log(data);
-                alert('huerto guardada correctamente');
-                window.location.href = 'registrarHuertos.html'
+function registrarHuertos() {
+    // Obtener los valores del formulario
+    var nombreHuerto = document.getElementById('txtNombreHuerto').value;
+    var descripcion = document.getElementById('txtDescripcion').value;
+
+    // Obtener el ID del usuario del token JWT
+    obtenerTokenJWT()
+        .then(function(key) {
+            var idUsuario = key;
+
+            // Crear el objeto de datos a enviar
+            var datos = {
+                nombreHuerto: nombreHuerto,
+                descripcion: descripcion,
+                idUsuario: idUsuario
+            };
+
+            // Realizar la petición POST usando fetch
+            fetch('/api/registrarHuertos', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(datos)
             })
-            .catch(error => {
-                console.error(error);
-                alert('Error al guardar huerto');
-            });
+                .then(function(response) {
+                    if (response.ok) {
+                        return response.json();
+                    }
+                    throw new Error('Error en la respuesta de la API');
+                })
+                .then(function(data) {
+                    // Manejar la respuesta de la API
+                    console.log(data);
+                    // Aquí puedes realizar acciones adicionales después del registro exitoso
+                })
+                .catch(function(error) {
+                    // Manejar los errores de la petición
+                    console.error('Error:', error);
+                    // Aquí puedes mostrar un mensaje de error al usuario
+                });
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
+            // Aquí puedes manejar el error y mostrar un mensaje al usuario si es necesario
+        });
+}
+function obtenerTokenJWT() {
+    return fetch('api/obtenerToken', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(function(response) {
+            if (response.ok) {
+                return response.text(); // Parsear la respuesta como texto
+            }
+            throw new Error('Error al obtener el token JWT del servidor');
+        })
+        .then(function(data) {
+            // Obtener el token key del texto de respuesta
+            var key = data.replace('Token key: ', '');
 
+            // Mostrar el token key en la consola
+            console.log('Token key:', key);
+
+            // Devolver el token key
+            return key;
+        })
+        .catch(function(error) {
+            console.error('Error:', error);
+            // Aquí puedes manejar el error y mostrar un mensaje al usuario si es necesario
+        });
 }
