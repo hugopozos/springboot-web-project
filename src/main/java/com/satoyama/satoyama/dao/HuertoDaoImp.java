@@ -47,5 +47,7 @@ public class HuertoDaoImp implements HuertoDao{
         entityManager.remove(huerto);
     }
 
+    @Override
+    public Huerto obtenerHuertoporId(Long idHuerto) {return huertoRepository.findById(idHuerto).orElse(null);}
 
 }

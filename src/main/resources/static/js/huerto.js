@@ -31,7 +31,19 @@ async function obtenerNombreHuerto() {
         const huertos = await request.json();
         console.log(huertos);
 
-        const tituloHuerto = document.querySelector('#nombre-huerto');
+        let listadoHtml = '';
+        let descripcionHtml = '';
+        for (let huerto of huertos) {
+            let huertoHtml = huerto.nombreHuerto ;
+            let descHtml = huerto.descripcion;
+            listadoHtml += huertoHtml;
+            descripcionHtml += descHtml;
+            console.log(listadoHtml);
+        }
+        document.querySelector('#nombre-huerto').innerHTML = listadoHtml;
+        document.querySelector('#descripcion-huerto').innerHTML = descripcionHtml;
+
+        //const tituloHuerto = document.querySelector('#nombre-huerto');
 
         const nombreHuerto = huertos.NombreHuerto;
         tituloHuerto.textContent = 'Huerto ' + nombreHuerto;

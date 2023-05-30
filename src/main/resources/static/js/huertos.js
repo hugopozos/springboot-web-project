@@ -42,6 +42,7 @@ async function cargarHuertos() {
             fila.addEventListener('click', function() {
                 // Modificar la URL con el ID del huerto
                 const url = 'huerto.html?id=' + huertoId;
+                localStorage.setItem('huertoId', huertoId);
                 history.pushState(null, null, url);
 
                 // Redireccionar a la página del huerto

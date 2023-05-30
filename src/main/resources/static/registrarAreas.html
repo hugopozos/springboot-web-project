@@ -186,59 +186,45 @@
                 <!----------------------------------------- End of Topbar ------------------------------------------------>
 
 
-                <!----------------------------------------- Page Content  ------------------------------------------------>
-                <div class="container-fluid">
-                    <!-- Page Heading -->
-                    <div class="card o-hidden border-0 shadow-lg my-5">
-                        <div class="card-body p-0">
-                            <!-- Nested Row within Card Body -->
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <div class="p-5">
-                                        <div class="text-center">
-                                            <br><br>
-                                            <h1 class="h4 text-gray-900 mb-4">¡Crea una nueva Área!</h1>
-                                        </div>
-                                        <!-- Formulario de registro -->
-                                        <form method="POST" class="user">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control form-control-user"
-                                                    id="txtNombreArea" placeholder="Nombre del Area" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <textarea class="form-control form-control-user" id="txtDescripcion"
-                                                    placeholder="¿Como es tu area? ¿Que plantas habra aqui?"
-                                                    style="resize: none;" maxlength="100" required></textarea>
-                                            </div>
-                                            <hr>
-                                            <div class="col-sm-6">
-                                                <div class="dropdown mb-4 show">
-                                                    <button class="btn btn-primary dropdown-toggle" type="button"
-                                                        id="dropdownMenuButton" data-toggle="dropdown"
-                                                        aria-haspopup="true" aria-expanded="false">
-                                                        Plantas
-                                                    </button>
-                                                    <div class="dropdown-menu animated--fade-in"
-                                                        aria-labelledby="dropdownMenuButton" style="">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                            <a onclick="" href="areas.html" class="btn btn-primary btn-user btn-block">
-                                                Crear
-                                            </a>
-                                        </form>
+            <!----------------------------------------- Page Content  ------------------------------------------------>
+            <div class="container-fluid">
+                <!-- Page Heading -->
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <br><br>
+                                        <h1 class="h4 text-gray-900 mb-4">¡Crea un nuevo Area!</h1>
                                     </div>
+                                    <!-- Formulario de registro -->
+                                    <form method="POST" class="areas">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control form-control-user" id="txtNombreArea"
+                                                   placeholder="Nombre del Area" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control form-control-user" id="txtDescripcion"
+                                                      placeholder="¿Como es tu area? ¿Que plantas habra aqui?" style="resize: none;" maxlength="100" required></textarea>
+                                        </div>
+                                        <hr>
+
+
+                                        <a onclick="registrarAreas()" href="#" class="btn btn-primary btn-user btn-block">
+                                            Crear
+                                        </a>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
             </div>
-            <!-- End of Main Content -->
+            <!-- /.container-fluid -->
+        </div>
+        <!-- End of Main Content -->
 
 
             <!-- Footer -->
@@ -259,41 +245,41 @@
     </div>
     <!----------------------------------------------- End of Page Wrapper ------------------------------------------------>
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
             </div>
         </div>
     </div>
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
-    <!-- Page level plugins -->
-    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="js/huertos.js"></script>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Page level custom scripts -->
+<script src="js/registrarArea.js"></script>
 
 </body>
 
