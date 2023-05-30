@@ -15,4 +15,6 @@ public interface HuertoDao {
     void registrarHuertos(Huerto huerto);
 
     void eliminar(Long id);
+
+    Huerto obtenerHuertoporId(Long idHuerto);
 }

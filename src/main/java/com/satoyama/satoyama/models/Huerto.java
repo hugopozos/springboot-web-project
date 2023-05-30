@@ -25,4 +25,15 @@ public class Huerto {
     @JoinColumn(name = "numero_usuario")
     private Usuario usuario;
 
+    public Huerto () {
+
+    }
+    public Huerto (Long idHuerto) {
+        this.codigoHuerto = idHuerto;
+        this.NombreHuerto = null;
+        this.Descripcion = null;
+        this.usuario = null;
+
+    }
+
 }
