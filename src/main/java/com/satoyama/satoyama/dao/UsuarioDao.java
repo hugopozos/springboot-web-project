@@ -13,4 +13,6 @@ public interface UsuarioDao {
 
     Usuario obtenerUsuarioPorCredenciales(Usuario usuario);
 
+    Usuario obtenerUsuarioPorId(long idUsuario);
+
 }
