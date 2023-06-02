@@ -93,7 +93,7 @@ async function cargarPlantas() {
             const plantaId = fila.getAttribute('data-planta-id');
             fila.addEventListener('click', function() {
                 // Modificar la URL con el ID del huerto
-                const url = 'planta.html?id=' + plantaId;
+                const url = 'catalogo-aguacate.html';
                 localStorage.setItem('plantaId',plantaId);
                 history.pushState(null, null, url);
 

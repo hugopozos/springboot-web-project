@@ -47,12 +47,12 @@ function registrarHuertos() {
                 .then(function(data) {
                     // Manejar la respuesta de la API
                     console.log(data);
-                    // Aquí puedes realizar acciones adicionales después del registro exitoso
+                    // Redireccionar a huertos.html
+                    window.location.href = 'huertos.html';
                 })
                 .catch(function(error) {
                     // Manejar los errores de la petición
                     console.error('Error:', error);
-                    // Aquí puedes mostrar un mensaje de error al usuario
                 });
         })
         .catch(function(error) {
